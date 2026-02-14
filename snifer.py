@@ -20,8 +20,7 @@ class Snifer:
         print(self.ser)
         self.requests = set()
 
-    # ser.write(b'command')
-    def read_port(self):
+    def port_read(self):
         self.data = self.ser.readline()
         if not(self.data in self.requests):
             self.requests.add(self.data)
@@ -29,6 +28,25 @@ class Snifer:
             print(self.data)
             print(result)
             return result
+
+    # ser.write(b'command')
+    def port_write(self):
+        pass
+
+    def port_reopen(self):
+        pass
+
+    def get_crc(self):
+        pass
+
+    def get_request(self):
+        pass
+
+    def change_addres_in_reequest(self):
+        pass
+
+    def get_imitation_answer(self):
+        pass
 
     def port_close(self):
         self.ser.close()
